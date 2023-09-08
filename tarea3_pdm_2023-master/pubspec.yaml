@@ -1,0 +1,27 @@
+name: info_lugar
+description: A new Flutter project.
+publish_to: 'none'
+
+environment:
+  sdk: '>=2.18.6 <3.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/hotel.avif
+    - assets/coral.jpeg
+    - assets/Machu_Picchu.jpg
+    - assets/muralla.jpg
+    - assets/templo.jpg
+    - assets/Taj_Mahal.webp
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
