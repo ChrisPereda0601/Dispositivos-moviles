@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "153155833165",
+    "project_id": "clasemoviles-804f9",
+    "storage_bucket": "clasemoviles-804f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153155833165:android:858186596a8f626b8f7b04",
+        "android_client_info": {
+          "package_name": "com.example.chat_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdK47g6eL3gUatDp0bWI2vofVNZsNvGfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153155833165:android:2f2fb110ec3148478f7b04",
+        "android_client_info": {
+          "package_name": "com.example.fire_notes_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdK47g6eL3gUatDp0bWI2vofVNZsNvGfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153155833165:android:92dc7d947ca060c88f7b04",
+        "android_client_info": {
+          "package_name": "com.example.gtk_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdK47g6eL3gUatDp0bWI2vofVNZsNvGfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
