@@ -16,6 +16,41 @@ CircleAvatar? buildSenderAvatar(
 class ChatMessages extends StatelessWidget {
   const ChatMessages({super.key});
 
+  Widget buildMessageContent(Map<String, dynamic> content) {
+    List<Widget> widgets = [];
+    Set<String> uniqueMessages = Set<String>();
+
+    content.forEach((key, value) {
+      if (value is String) {
+        List<String> urls = value.split(',');
+
+        // Show the message only once
+        if (uniqueMessages.add(key)) {
+          widgets.add(Text(key));
+        }
+
+        // Show the file icons for each URL in a horizontal row
+        Row row = Row(
+          children: urls
+              .where((url) => Uri.parse(url.trim()).isAbsolute)
+              .map((url) => Row(
+                    children: [
+                      Icon(Icons.file_present),
+                    ],
+                  ))
+              .toList(),
+        );
+
+        widgets.add(row);
+      }
+    });
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: widgets,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,26 +66,16 @@ class ChatMessages extends StatelessWidget {
             .collection('messages'),
         itemBuilder: (BuildContext context,
             QueryDocumentSnapshot<Map<String, dynamic>> document) {
-          Map<String, dynamic> contentMap = document.data()['content'];
-          List<String> contentKeys = contentMap.keys.toList();
-
           String currentUser = '456';
 
           String senderName = document.data()['senderName'];
           String initial = senderName[0];
 
-          String key = contentKeys.isNotEmpty ? contentKeys[0] : '';
-
           CircleAvatar? senderAvatar = buildSenderAvatar(
               document.data()['senderId'], currentUser, initial);
 
           return ListTile(
-            title: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Mensaje: $key'),
-              ],
-            ),
+            title: buildMessageContent(document.data()['content']),
             subtitle: Text(
                 'Nombre de quien lo envía: ${document.data()['senderName']}'),
             leading: senderAvatar,
